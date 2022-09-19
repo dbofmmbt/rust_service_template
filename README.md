@@ -10,22 +10,27 @@ This is the Rust Service Template. It is a project template for microservices.
 
 ## Features checklist
 
-- [x] logs
+### Ready
+
+- logs
   - tracing + opentelemetry
-- [x] Some way to integrate wit new relic
+- Some way to integrate with new relic
   - new relic supports collecting OTLP data directly.
-- [x] health check
+- health check
   - `/health`
-- [ ] basic setup for service tests
-  - evaluating `wiremock`
-- [ ] config through e.g. yaml or TOML and env vars override
-  - we'll probably use `config`
-- [x] Trace Context propagation
+- Trace Context propagation
   - `axum_tracing_opentelemetry` and `opentelemetry` propagators did it.
-- [x] Ready to use AWS (`aws_config`)
+- Ready to use AWS (`aws_config`)
   - can we let more stuff done?
-- [ ] Deploy files
-  - [x] Dockerfile
-  - [ ] taskdef
-  - [ ] appspec
-  - [ ] buildspec
+
+### To-do
+
+- basic setup for service tests
+  - evaluating `wiremock`
+- config through e.g. yaml or TOML and env vars override
+  - we'll probably use `config`
+- Deploy files
+  - Dockerfile (done)
+  - taskdef
+  - appspec
+  - buildspec
