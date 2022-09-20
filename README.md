@@ -22,13 +22,13 @@ This is the Rust Service Template. It is a project template for microservices.
   - `axum_tracing_opentelemetry` and `opentelemetry` propagators did it.
 - Ready to use AWS (`aws_config`)
   - can we let more stuff done?
+- Config through e.g. yaml or TOML and env vars override
+  - we'll probably use `config`
 
 ### To-do
 
 - basic setup for service tests
   - evaluating `wiremock`
-- config through e.g. yaml or TOML and env vars override
-  - we'll probably use `config`
 - Deploy files
   - Dockerfile (done)
   - taskdef

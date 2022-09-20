@@ -1,10 +1,19 @@
 use tracing::{info, instrument};
 
-use crate::api::api;
+use crate::{api::api, setup::{config_setup}};
 
 #[tokio::main]
 async fn main() {
     setup::telemetry();
+
+    let settings = config_setup();
+
+    println!(
+        "{:?}, {:?}",
+        settings.debug,
+        settings.text
+    );
+
     start_server().await;
 }
 

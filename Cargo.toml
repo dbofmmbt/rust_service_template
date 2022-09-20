@@ -9,6 +9,7 @@ edition = "2021"
 aws-config = "0.48.0"
 axum = "0.5.16"
 axum-tracing-opentelemetry = { version = "0.4.0" }
+config = "0.13.2"
 eyre = "0.6.8"
 hyper = { version = "0.14.20", features = ["full"] }
 opentelemetry = { version = "0.17", features = ["rt-tokio"] }
