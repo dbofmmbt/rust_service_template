@@ -3,24 +3,24 @@ use tracing::{info, instrument};
 use crate::{api::api, setup::config_setup};
 
 #[tokio::main]
-async fn main() {
-    setup::telemetry();
+async fn main() -> eyre::Result<()> {
+    setup::telemetry()?;
 
-    let settings = config_setup();
+    let settings = config_setup()?;
 
-    println!("{:?}, {:?}", settings.debug, settings.text);
+    info!(settings.debug, settings.text, "config loaded");
 
-    start_server().await;
+    start_server().await
 }
 
 #[instrument]
-async fn start_server() {
+async fn start_server() -> eyre::Result<()> {
     info!("Server started!");
 
-    axum::Server::bind(&"0.0.0.0:8080".parse().unwrap())
+    axum::Server::bind(&"0.0.0.0:8080".parse()?)
         .serve(api().into_make_service())
-        .await
-        .unwrap();
+        .await?;
+    Ok(())
 }
 
 mod api;

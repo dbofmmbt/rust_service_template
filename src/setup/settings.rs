@@ -1,8 +1,8 @@
 use config::Config;
-
+use eyre::WrapErr;
 use tracing::info;
 
-pub fn config_setup() -> Settings {
+pub fn config_setup() -> eyre::Result<Settings> {
     let run_mode = std::env::var("RUN_MODE").unwrap_or_else(|_| "local".to_string());
 
     info!("Running with mode: {run_mode}");
@@ -15,9 +15,9 @@ pub fn config_setup() -> Settings {
         // Eg.. `APP_DEBUG=1 ./target/app` would set the `debug` key
         .add_source(config::Environment::with_prefix("APP"))
         .build()
-        .unwrap()
+        .wrap_err("Couldn't build config from the sources")?
         .try_deserialize::<Settings>()
-        .unwrap()
+        .wrap_err("Couldn't load config into the `Settings` struct")
 }
 
 #[derive(serde::Deserialize, Debug)]
