@@ -41,6 +41,6 @@ pub fn config_setup() -> AppConfig {
 
 #[derive(serde::Deserialize, Debug)]
 pub struct AppConfig {
-    pub debug:bool,
-    pub text:String
+    pub debug: bool,
+    pub text: String,
 }

@@ -1,6 +1,6 @@
 use tracing::{info, instrument};
 
-use crate::{api::api, setup::{config_setup}};
+use crate::{api::api, setup::config_setup};
 
 #[tokio::main]
 async fn main() {
@@ -8,11 +8,7 @@ async fn main() {
 
     let settings = config_setup();
 
-    println!(
-        "{:?}, {:?}",
-        settings.debug,
-        settings.text
-    );
+    println!("{:?}, {:?}", settings.debug, settings.text);
 
     start_server().await;
 }
