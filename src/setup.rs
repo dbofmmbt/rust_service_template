@@ -1,4 +1,3 @@
-use config::Config;
 use opentelemetry::sdk::propagation::TraceContextPropagator;
 use tracing::metadata::LevelFilter;
 use tracing_subscriber::{prelude::__tracing_subscriber_SubscriberExt, Layer, Registry};
@@ -26,21 +25,5 @@ pub(crate) fn telemetry() {
         .expect("failed to set the tracing subscriber");
 }
 
-pub fn config_setup() -> AppConfig {
-    Config::builder()
-        // Add in `./Settings.toml`
-        .add_source(config::File::with_name("Config"))
-        // Add in settings from the environment (with a prefix of APP)
-        // Eg.. `APP_DEBUG=1 ./target/app` would set the `debug` key
-        .add_source(config::Environment::with_prefix("APP"))
-        .build()
-        .unwrap()
-        .try_deserialize::<AppConfig>()
-        .unwrap()
-}
-
-#[derive(serde::Deserialize, Debug)]
-pub struct AppConfig {
-    pub debug: bool,
-    pub text: String,
-}
+mod settings;
+pub use settings::config_setup;
