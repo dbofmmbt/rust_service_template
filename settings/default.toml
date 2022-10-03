@@ -1,2 +1,1 @@
-debug = true
-text = 'texto'
+port = 8080

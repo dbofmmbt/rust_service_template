@@ -1,6 +1,10 @@
-use tracing::{info, instrument};
+use std::net::TcpListener;
 
-use crate::{api::api, setup::config_setup};
+use tracing::info;
+
+mod setup;
+use service_template::server;
+use setup::config_setup;
 
 #[tokio::main]
 async fn main() -> eyre::Result<()> {
@@ -8,20 +12,8 @@ async fn main() -> eyre::Result<()> {
 
     let settings = config_setup()?;
 
-    info!(settings.debug, settings.text, "config loaded");
+    info!(?settings, "config loaded");
+    let listener = TcpListener::bind(("0.0.0.0", settings.port))?;
 
-    start_server().await
+    server::start(listener).await
 }
-
-#[instrument]
-async fn start_server() -> eyre::Result<()> {
-    info!("Server started!");
-
-    axum::Server::bind(&"0.0.0.0:8080".parse()?)
-        .serve(api().into_make_service())
-        .await?;
-    Ok(())
-}
-
-mod api;
-mod setup;
