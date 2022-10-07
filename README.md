@@ -24,11 +24,11 @@ This is the Rust Service Template. It is a project template for microservices.
   - can we let more stuff done?
 - Config through e.g. yaml or TOML and env vars override
   - we'll probably use `config`
+- basic setup for service tests
+  - using `wiremock`
 
 ### To-do
 
-- basic setup for service tests
-  - evaluating `wiremock`
 - Deploy files
   - Dockerfile (done)
   - taskdef
