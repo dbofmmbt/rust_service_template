@@ -2,6 +2,8 @@
 
 This is the Rust Service Template. It is a project template for microservices.
 
+Initially, this template is focused on HTTP services.
+
 ## How to run
 
 - Install rust on <http://rustup.rs>
@@ -22,8 +24,12 @@ This is the Rust Service Template. It is a project template for microservices.
   - Using `config` for that
 - basic setup for service tests
   - using `wiremock`
+- Dockerfile
 
-### To-do
+### TODO
 
-- Deploy files
-  - Dockerfile (done)
+- Use Docker's buildkit to cache dependencies
+- Configure an HTTP client
+  - trace context propagation
+- evaluate addition of the `http_problem` crate
+- Add endpoint to print information similar to [actuator info](https://docs.spring.io/spring-boot/docs/current/actuator-api/htmlsingle/#info)
