@@ -1,7 +1,7 @@
 mod telemetry;
 use config::Config;
 use eyre::Context;
-use service_template::Settings;
+use {{crate_name}}::Settings;
 pub use telemetry::telemetry;
 use tracing::info;
 

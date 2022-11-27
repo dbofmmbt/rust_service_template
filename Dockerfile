@@ -1,5 +1,5 @@
 # MUST be the same as the crate's name
-ARG APP_NAME=service_template  # TODO update app name
+ARG APP_NAME={{crate_name}}
 
 ARG FOLDER=/usr/src/${APP_NAME}
 

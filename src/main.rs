@@ -3,7 +3,7 @@ use std::net::TcpListener;
 use tracing::info;
 
 mod setup;
-use service_template::server;
+use {{crate_name}}::server;
 use setup::config_setup;
 
 #[tokio::main]

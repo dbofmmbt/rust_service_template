@@ -1,28 +1,29 @@
 [package]
-name = "service_template"  # TODO change crate name
+name = "{{crate_name}}"
 version = "0.0.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-aws-config = "0.49"
-axum = "0.5.16"
-axum-tracing-opentelemetry = { version = "0.5.0" }
 config = { version = "0.13.2", default-features = false, features = ["toml"] }
 eyre = "0.6.8"
-hyper = { version = "0.14.20", features = ["full"] }
 opentelemetry = { version = "0.18", features = ["rt-tokio"] }
 opentelemetry-otlp = { version = "0.11.0", features = ["tokio"] }
-serde = { version = "1.0.144", features = ["derive"] }
-serde_json = "1.0.85"
 thiserror = "1.0.35"
 tokio = { version = "1.21.1", features = ["full"] }
-tower = { version = "0.4.13", features = ["full"] }
-tower-http = { version = "0.3.4", features = ["trace"] }
 tracing = "0.1.36"
 tracing-opentelemetry = "0.18"
 tracing-subscriber = { version = "0.3.15", features = ["env-filter"] }
+
+tower = { version = "0.4.13", features = ["full"] }
+tower-http = { version = "0.3.4", features = ["trace"] }
+axum = "0.5.16"
+axum-tracing-opentelemetry = { version = "0.5.0" }
+hyper = { version = "0.14.20", features = ["full"] }
+
+serde = { version = "1.0.144", features = ["derive"] }
+serde_json = "1.0.85"
 
 [dev-dependencies]
 reqwest = "0.11.12"
