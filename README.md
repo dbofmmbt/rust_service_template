@@ -33,3 +33,4 @@ Initially, this template is focused on HTTP services.
   - trace context propagation
 - evaluate addition of the `http_problem` crate
 - Add endpoint to print information similar to [actuator info](https://docs.spring.io/spring-boot/docs/current/actuator-api/htmlsingle/#info)
+- evaluate crates that generate OpenAPI schemas
