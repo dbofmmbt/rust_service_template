@@ -25,12 +25,13 @@ Initially, this template is focused on HTTP services.
 - basic setup for service tests
   - using `wiremock`
 - Dockerfile
+- Configured HTTP client
+  - request and response tracing
+  - trace context propagation
 
 ### TODO
 
 - Use Docker's buildkit to cache dependencies
-- Configure an HTTP client
-  - trace context propagation
 - evaluate addition of the `http_problem` crate
 - Add endpoint to print information similar to [actuator info](https://docs.spring.io/spring-boot/docs/current/actuator-api/htmlsingle/#info)
 - evaluate crates that generate OpenAPI schemas
