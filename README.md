@@ -1,28 +1,29 @@
 # Rust Service Template
 
-This is the Rust Service Template. It is a project template for microservices.
+This is a project template for HTTP services. It aims to get you up and running with features expected on more opinionated web frameworks while you can keep control of the specific pieces.
 
-Initially, this template is focused on HTTP services.
+## How to use this template
 
-## How to run
+- Be sure that you have [cargo generate](https://github.com/cargo-generate/cargo-generate) installed.
+- Run the following command:
 
-- Install rust on <http://rustup.rs>
-- Run `cargo test` to build and run tests.
-- Run `cargo run` to start the application.
+```sh
+cargo generate dbofmmbt/rust_service_template
+```
 
 ## Features checklist
 
 ### Ready
 
-- logs
+- Logs
   - tracing + opentelemetry
-- health check
-  - `/health`
+- Health check
+  - Simple `/health` endpoint
 - Trace Context extraction
   - `axum_tracing_opentelemetry` and `opentelemetry` propagators did it.
 - Config through e.g. yaml or TOML and env vars override
   - Using `config` for that
-- basic setup for service tests
+- Basic setup for service/integration tests
   - using `wiremock`
 - Dockerfile
 - Configured HTTP client
@@ -32,6 +33,6 @@ Initially, this template is focused on HTTP services.
 ### TODO
 
 - Use Docker's buildkit to cache dependencies
-- evaluate addition of the `http_problem` crate, or something similar
+- Evaluate addition of the `http_problem` crate, or something similar
 - Add endpoint to print information similar to [actuator info](https://docs.spring.io/spring-boot/docs/current/actuator-api/htmlsingle/#info)
-- evaluate crates that generate OpenAPI schemas
+- Evaluate crates that generate OpenAPI schemas
