@@ -17,6 +17,7 @@ jobs:
       PROJECT_NAME: templatest
     steps:
       - uses: actions/checkout@v2
+      - uses: arduino/setup-protoc@v1
       - uses: cargo-generate/cargo-generate-action@v0.11.0
         with:
           name: ${{ env.PROJECT_NAME }}
