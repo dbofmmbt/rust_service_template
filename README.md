@@ -32,6 +32,6 @@ Initially, this template is focused on HTTP services.
 ### TODO
 
 - Use Docker's buildkit to cache dependencies
-- evaluate addition of the `http_problem` crate
+- evaluate addition of the `http_problem` crate, or something similar
 - Add endpoint to print information similar to [actuator info](https://docs.spring.io/spring-boot/docs/current/actuator-api/htmlsingle/#info)
 - evaluate crates that generate OpenAPI schemas
