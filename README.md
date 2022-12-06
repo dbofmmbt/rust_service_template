@@ -18,7 +18,7 @@ Initially, this template is focused on HTTP services.
   - tracing + opentelemetry
 - health check
   - `/health`
-- Trace Context propagation
+- Trace Context extraction
   - `axum_tracing_opentelemetry` and `opentelemetry` propagators did it.
 - Config through e.g. yaml or TOML and env vars override
   - Using `config` for that
@@ -27,7 +27,7 @@ Initially, this template is focused on HTTP services.
 - Dockerfile
 - Configured HTTP client
   - request and response tracing
-  - trace context propagation
+  - Trace Context propagation
 
 ### TODO
 
