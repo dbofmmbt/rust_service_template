@@ -19,8 +19,7 @@ tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 tower = { version = "0.4", features = ["full"] }
 tower-http = { version = "0.3", features = ["trace"] }
 axum = "0.6"
-axum-tracing-opentelemetry = "0.5"
-hyper = { version = "0.14", features = ["full"] }
+axum-tracing-opentelemetry = "0.9"
 reqwest = "0.11"
 reqwest-middleware = "0.2.0"
 reqwest-tracing = { version = "0.4.0", features = ["opentelemetry_0_18"] }
